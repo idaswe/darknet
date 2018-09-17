@@ -1,0 +1,5 @@
+classes= 1
+train  = ./cfg/cropped_fox_train.txt
+valid  = ./cfg/cropped_fox_test.txt
+names = ./cfg/cropped_fox.names
+backup = ./backup/cropped_fox
