@@ -135,7 +135,7 @@ void train_detector(char *datacfg, char *cfgfile, char *weightfile, int *gpus, i
             sprintf(buff, "%s/%s.backup", backup_directory, base);
             save_weights(net, buff);
         }
-        if(i%10000==0 || (i < 1000 && i%100 == 0)){
+        if(i%500==0 || (i < 1000 && i%100 == 0)){
 #ifdef GPU
             if(ngpus != 1) sync_nets(nets, ngpus, 0);
 #endif
@@ -353,7 +353,7 @@ void validate_detector_flip(char *datacfg, char *cfgfile, char *weightfile, char
         if(fps) fclose(fps[j]);
     }
     if(coco){
-        fseek(fp, -2, SEEK_CUR); 
+        fseek(fp, -2, SEEK_CUR);
         fprintf(fp, "\n]\n");
         fclose(fp);
     }
@@ -479,7 +479,7 @@ void validate_detector(char *datacfg, char *cfgfile, char *weightfile, char *out
         if(fps) fclose(fps[j]);
     }
     if(coco){
-        fseek(fp, -2, SEEK_CUR); 
+        fseek(fp, -2, SEEK_CUR);
         fprintf(fp, "\n]\n");
         fclose(fp);
     }
@@ -648,7 +648,7 @@ void censor_detector(char *datacfg, char *cfgfile, char *weightfile, int cam_ind
     }
 
     if(!cap) error("Couldn't connect to webcam.\n");
-    cvNamedWindow(base, CV_WINDOW_NORMAL); 
+    cvNamedWindow(base, CV_WINDOW_NORMAL);
     cvResizeWindow(base, 512, 512);
     float fps = 0;
     int i;
@@ -721,7 +721,7 @@ void extract_detector(char *datacfg, char *cfgfile, char *weightfile, int cam_in
     }
 
     if(!cap) error("Couldn't connect to webcam.\n");
-    cvNamedWindow(base, CV_WINDOW_NORMAL); 
+    cvNamedWindow(base, CV_WINDOW_NORMAL);
     cvResizeWindow(base, 512, 512);
     float fps = 0;
     int i;
