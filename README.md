@@ -20,7 +20,7 @@ contains information on where the training data is located and where to store th
 
 <br />
 
-1. `git clone https://github.com/idaswe/yolo-workshop`
+1. `git clone https://github.com/idaswe/darknet`
 
 <br />
 
